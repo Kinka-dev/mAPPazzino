@@ -7,22 +7,16 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "gradle": {
-        "version": "8.5"
-      }
+      
     },
     "preview": {
       "distribution": "internal",
-      "gradle": {
-        "version": "8.5"
-      }
+      
     },
     "production": {
       "distribution": "store",
       "autoIncrement": true,
-      "gradle": {
-        "version": "8.5"
-      }
+      
     }
   },
   "submit": {
