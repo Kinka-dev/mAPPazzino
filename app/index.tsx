@@ -21,12 +21,6 @@ import {
   loadMutationLogFromFile,
 } from "../db/mutationLog";
 import { ProductItem } from "../components/ProductItem";
-import { useGoogleLogin } from "../auth/useGoogleLogin";
-import { uploadToGoogleDrive } from "../auth/uploadToGoogleDrive";
-import {
-  downloadFromGoogleDrive,
-  saveDownloadedMutationLog,
-} from "../auth/downloadFromGoogleDrive";
 import { applyMutationsToDatabase } from "../db/applyMutations";
 import { router } from "expo-router";
 
@@ -37,7 +31,7 @@ export default function App() {
   const [products, setProducts] = useState<Product[]>([]);
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("1");
-  const { accessToken, loginWithGoogle } = useGoogleLogin();
+  // const { accessToken, loginWithGoogle } = useGoogleLogin();
 
   async function loadProducts() {
     const rows = await getAllProducts();
@@ -139,9 +133,9 @@ export default function App() {
         }}
       />
 
-      <Button title="Login con Google" onPress={loginWithGoogle} />
+      {/* <Button title="Login con Google" onPress={loginWithGoogle} /> */}
 
-      <Button
+      {/* <Button
         title="Upload su Google Drive"
         onPress={async () => {
           if (!accessToken) {
@@ -167,7 +161,7 @@ export default function App() {
             await saveDownloadedMutationLog(content);
           }
         }}
-      />
+      /> */}
 
       <Button
         title="Applica mutazioni"
@@ -179,7 +173,7 @@ export default function App() {
       />
 
       {/* Lista prodotti */}
-      <FlatList
+      {/* <FlatList
         data={products}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
@@ -188,8 +182,8 @@ export default function App() {
             onUpdate={handleUpdate}
             onDelete={handleDelete}
           />
-        )}
-      />
+        // )}
+      /> */}
     </View>
   );
 }
